@@ -7,6 +7,14 @@ body {
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1; /* Chiếm không gian còn lại bên dưới header và trên footer */
+  padding: 20px;
+  padding-bottom: 20px; /* Padding dưới cùng để tránh nội dung chạm vào footer */
 }
 /* phần header trên cùng */
 .header {
@@ -30,10 +38,10 @@ body {
 /* --- */
 .botset-container {
   position: relative; 
-  width: 100%; 
-  display: flex; 
+  width: 100%;
+    display: flex; 
   justify-content: center;
-  margin-top: auto; 
+  margin-top: auto ; 
 }
 
 .botset-container img {
@@ -81,6 +89,7 @@ footer{
   font-size: 15px;
   text-align: center; 
   color : white;
+  z-index: 1000; /* Ensures it's above other content */
 }
 
 h1 {
@@ -90,11 +99,13 @@ h1 {
   margin-bottom: 20px; 
   font-size: 50px;
 }
+/* -----SearchPage-----*/
+
 .koi-label {
   font-family: 'Arial', sans-serif; 
   font-weight: bold; 
   font-size: 18px; 
-  color: #black; 
+  color: #9ba37f; 
   margin-bottom: 10px; 
 }
 
@@ -110,6 +121,8 @@ select {
   margin-left: 10px;
   border: 2px solid #007BFF;
   border-radius: 5px;
+  color: #333;
+
 }
 
 #koi-list {
@@ -117,6 +130,7 @@ select {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  
 }
 
 .koi-item {
@@ -127,6 +141,7 @@ select {
   text-align: center;
   width: 200px;
   transition: transform 0.2s;
+  color: #333;
 }
 
 .koi-item:hover {
