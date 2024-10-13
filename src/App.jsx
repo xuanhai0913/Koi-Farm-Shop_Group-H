@@ -11,6 +11,7 @@ import InventoryPage from './InventoryPage';
 import OrdersPage from './OrdersPage';
 import CustomersPage from './CustomersPage';
 import { Route, Routes } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => {
     const [page, setPage] = useState('search');
