@@ -1,0 +1,352 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  background-image: url('../img/bg_menu.png'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1; /* Chiếm không gian còn lại bên dưới header và trên footer */
+  padding: 20px;
+  padding-bottom: 20px; /* Padding dưới cùng để tránh nội dung chạm vào footer */
+}
+/* phần header trên cùng */
+.header {
+  background-color: #3b0a0a;
+  padding: 10px 0;
+  text-align: center;
+}
+.header img {
+  height: 50px;
+}
+.header .contact-info {
+  color: #fff;
+  font-size: 14px;
+}
+
+.header .social-icons a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+/* --- */
+.botset-container {
+  position: relative; 
+  width: 100%;
+    display: flex; 
+  justify-content: center;
+  margin-top: auto ; 
+}
+
+.botset-container img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+
+.botset-container img {
+  max-width: none; 
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-image: url('../img/Layer-1.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  height: 80px; 
+  padding: 15px;
+}
+
+nav button {
+  background-image: url('../img/bg_menu.png'); 
+  color: #9ba37f;
+  border:  none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+nav button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+}
+footer{
+  font-size: 15px;
+  text-align: center; 
+  color : white;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+h1 {
+  font-size: 24px; 
+  color: #ffffff; 
+  text-align: center; 
+  margin-bottom: 20px; 
+  font-size: 50px;
+}
+/* -----SearchPage-----*/
+
+.koi-label {
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold; 
+  font-size: 18px; 
+  color: #9ba37f; 
+  margin-bottom: 10px; 
+}
+
+
+.filter-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+  color: #333;
+
+}
+
+#koi-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+
+.koi-item {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+  transition: transform 0.2s;
+  color: #333;
+}
+
+.koi-item:hover {
+  transform: translateY(-10px);
+}
+
+.koi-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.koi-item h3 {
+  color: #007BFF;
+  margin-bottom: 5px;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #333;
+  
+}
+
+input, select {
+  padding: 10px; 
+  margin-top: 5px; 
+  font-size: 16px; 
+  border: 2px solid #007BFF; 
+  border-radius: 10px; 
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-container h1 {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.feedback-container form {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.feedback-container textarea {
+    width: 100%; 
+    height: 100px; 
+    padding: 10px; 
+    border: 2px solid #007BFF; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    color: #333; 
+    resize: none; 
+}
+
+.feedback-container button {
+    padding: 10px 20px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.feedback-container button:hover {
+    background-color: #0056b3; 
+}
+
+.star-rating {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 20px; 
+}
+
+.star {
+    font-size: 30px; 
+    cursor: pointer; 
+    color: #ccc; 
+    transition: color 0.3s; 
+}
+
+.star:hover {
+    color: #FFD700;
+}
+
+.profile-container h1 {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+
+.profile-container h1 {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.profile-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px; 
+}
+
+.profile-form input, .profile-form select {
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.profile-form button {
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.profile-form button:hover {
+    background-color: #0056b3;
+}
+
+.DashboardPage{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 50vw;
+}
+.AppHeader{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+  background-image: url('../img/Layer-1.jpg');
+  border-bottom: 1px solid rgba(red, green, blue, alpha);
+}
+.AppFooter{
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4px 20px;
+  border-bottom: 1px solid rgba(red, green, blue, alpha);
+}
+.SideMenuAndpageContent{
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items:flex-start;
+  background:	#f7f7f7 ;
+}
+.PageContent{
+  padding-left: 12px ;
+}
+.SideMenu{
+  height: 100%; 
+}
+.SideMenuVertical{
+  height: 100%;
+}

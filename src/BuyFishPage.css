@@ -1,0 +1,98 @@
+.header {
+    background-color: #3b0a0a;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.header img {
+    height: 50px;
+}
+.nav {
+    background-color: #3b0a0a;
+    overflow: hidden;
+}
+.nav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav a:hover {
+    background-color: #111;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.card {
+    background-color: #fff;
+    color: #000;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+.card .status {
+    background-color: #b30000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.card .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.card .description {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.card .price {
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.card .contact {
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.card .order-button {
+    background-color: #b30000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.footer {
+    background-color: #3b0a0a;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer .phone {
+    background-color: #b30000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+}

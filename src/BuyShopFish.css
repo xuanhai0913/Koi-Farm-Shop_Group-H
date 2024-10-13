@@ -1,0 +1,116 @@
+/* {
+    background-color: #3b0000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+} */
+ h2{
+    color: #ffcc00;;
+ }
+.header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+.header img {
+    height: 80px;
+}
+
+.nav {
+    background-color: #3b0000;
+    padding: 10px 0;
+    text-align: center;
+}
+.nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.breadcrumb {
+    padding: 10px 20px;
+    background-color: #3b0000;
+    color: #fff;
+}
+.breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+.container {
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.cart-table th, .cart-table td {
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: center;
+}
+.cart-table th {
+    background-color: #3b0000;
+    color: #fff;
+}
+.cart-table td img {
+    width: 50px;
+    height: auto;
+}
+.cart-summary {
+    text-align: right;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-summary table {
+    width: 300px;
+    border-collapse: collapse;
+}
+
+.cart-summary th, .cart-summary td {
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: left; 
+}
+
+.cart-summary th {
+    background-color: #3b0000;
+    color: #ffcc00;
+}
+
+.checkout-btn {
+    width: 300px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #800000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #800000;
+    padding: 20px;
+    text-align: center;
+}
+.footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+.footer .footer-content img {
+    width: 100px;
+    height: auto;
+}
+td input{
+    color: #000;
+}
