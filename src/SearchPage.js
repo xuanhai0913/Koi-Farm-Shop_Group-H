@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '../api/axiosInstance';
+import axiosInstance from './api/axiosInstance';
 
 const SearchPage = () => {
     const [koiData, setKoiData] = useState([]); // Khai báo state cho dữ liệu Koi

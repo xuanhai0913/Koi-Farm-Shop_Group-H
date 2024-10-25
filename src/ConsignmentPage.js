@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import app from './firebaseConfig';
-import axiosInstance from '../api/axiosInstance'; // Import axiosInstance
+import axiosInstance from './api/axiosInstance';
 
 const db = getFirestore(app);
 
