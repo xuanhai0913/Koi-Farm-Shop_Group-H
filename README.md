@@ -63,5 +63,5 @@ Dự án này nhằm mục đích xây dựng một trang web quản lý trang t
 
 1. **Clone Repository:**
    ```bash
-   git clone https://github.com/tronghieu3112/Koi-Farm-Shop_Group-H.git
+   git clone https://github.com/HieuTruongIT/Koi-Farm-Shop_Group-H.git
 
