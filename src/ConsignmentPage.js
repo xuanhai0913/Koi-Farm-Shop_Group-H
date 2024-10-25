@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import app from './firebaseConfig';
+import axiosInstance from '../api/axiosInstance'; // Import axiosInstance
 
 const db = getFirestore(app);
 
@@ -13,7 +14,7 @@ const ConsignmentPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         // Dữ liệu cá Koi
         const koiData = {
             name: koiName,
@@ -24,30 +25,13 @@ const ConsignmentPage = () => {
         };
 
         // Gửi dữ liệu lên API
-        fetch('https://run.mocky.io/v3/556840f1-7a24-4e11-a3c6-b9de77d488da', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(koiData),
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(async (data) => {
-            alert('Gửi thành công: ' + JSON.stringify(data));
-            
+        try {
+            const response = await axiosInstance.post('/koi', koiData); // Gọi API từ backend
+            alert('Gửi thành công: ' + JSON.stringify(response.data));
+
             // Gửi dữ liệu lên Firestore
-            try {
-                await addDoc(collection(db, 'consignments'), koiData);
-                alert('Dữ liệu đã được lưu vào Firestore.');
-            } catch (error) {
-                console.error('Lỗi khi lưu dữ liệu vào Firestore:', error);
-                alert('Gửi thất bại đến Firestore, vui lòng thử lại.');
-            }
+            await addDoc(collection(db, 'consignments'), koiData);
+            alert('Dữ liệu đã được lưu vào Firestore.');
 
             // Reset form
             setKoiName('');
@@ -55,11 +39,10 @@ const ConsignmentPage = () => {
             setKoiAge('');
             setKoiSize('');
             setKoiPurpose('bán');
-        })
-        .catch((error) => {
+        } catch (error) {
             console.error('Lỗi khi gửi dữ liệu:', error);
             alert('Gửi thất bại, vui lòng thử lại.');
-        });
+        }
     };
 
     return (
