@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';  
 
 const CustomerProfilePage = () => {
@@ -7,9 +7,44 @@ const CustomerProfilePage = () => {
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
 
-    const handleSubmit = (e) => {
+    // Fetch customer profile data from the backend on component mount
+    useEffect(() => {
+        const fetchCustomerData = async () => {
+            const response = await fetch('http://localhost:5000/api/customer');
+            const data = await response.json();
+            if (data) {
+                setName(data.name);
+                setEmail(data.email);
+                setPhone(data.phone);
+                setAddress(data.address);
+            }
+        };
+
+        fetchCustomerData();
+    }, []);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(`Thông tin đã được cập nhật: ${name}, ${email}, ${phone}, ${address}`);
+        const customerData = { name, email, phone, address };
+
+        const response = await fetch('http://localhost:5000/api/customer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(customerData),
+        });
+
+        if (response.ok) {
+            alert(`Thông tin đã được cập nhật: ${name}, ${email}, ${phone}, ${address}`);
+            // Optionally reset the form after submission
+            setName('');
+            setEmail('');
+            setPhone('');
+            setAddress('');
+        } else {
+            alert('Error updating customer information');
+        }
     };
 
     return (

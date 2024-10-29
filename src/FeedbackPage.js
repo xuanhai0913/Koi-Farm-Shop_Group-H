@@ -6,12 +6,27 @@ const FeedbackPage = () => {
     const [feedback, setFeedback] = useState('');
     const [rating, setRating] = useState(0); 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(`Đánh giá: ${rating} sao\nPhản hồi: ${feedback}`);
-        // Reset form
-        setFeedback('');
-        setRating(0);
+
+        try {
+            const response = await fetch('http://localhost:5000/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rating, feedback }),
+            });
+
+            if (response.ok) {
+                alert("Thank you for your feedback!");
+                setFeedback('');
+                setRating(0);
+            } else {
+                alert("Failed to submit feedback.");
+            }
+        } catch (error) {
+            console.error("Error submitting feedback:", error);
+            alert("An error occurred while submitting feedback.");
+        }
     };
 
     return (

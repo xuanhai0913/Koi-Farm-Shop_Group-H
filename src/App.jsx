@@ -6,12 +6,12 @@ import FeedbackPage from './FeedbackPage';
 import CustomerProfilePage from './CustomerProfilePage';
 import BuyFishPage from './BuyFishPage';
 import BuyShopFish from './BuyShopFish';
+import CompareFish from './CompareFish'; 
 import DashboardPage from './DashboardPage';
 import InventoryPage from './InventoryPage';
 import OrdersPage from './OrdersPage';
 import CustomersPage from './CustomersPage';
 import { Route, Routes } from 'react-router-dom';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => {
     const [page, setPage] = useState('search');
@@ -44,6 +44,7 @@ const App = () => {
             <div className="container">
                 <Routes>
                     <Route path='/cart' element={<BuyShopFish />} />
+                    <Route path='/compare-fish' element={<CompareFish />} />
                     <Route path='/search' element={<SearchPage />} />
                     <Route path='/consignment' element={<ConsignmentPage />} />
                     <Route path='/feedback' element={<FeedbackPage />} />

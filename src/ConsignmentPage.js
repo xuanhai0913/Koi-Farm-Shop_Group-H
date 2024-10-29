@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import app from './firebaseConfig';
-import axiosInstance from './api/axiosInstance';
-
-const db = getFirestore(app);
 
 const ConsignmentPage = () => {
     const [koiName, setKoiName] = useState('');
@@ -12,37 +7,15 @@ const ConsignmentPage = () => {
     const [koiSize, setKoiSize] = useState('');
     const [koiPurpose, setKoiPurpose] = useState('bán');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Dữ liệu cá Koi
-        const koiData = {
-            name: koiName,
-            type: koiType,
-            age: koiAge,
-            size: koiSize,
-            purpose: koiPurpose
-        };
-
-        // Gửi dữ liệu lên API
-        try {
-            const response = await axiosInstance.post('/koi', koiData); // Gọi API từ backend
-            alert('Gửi thành công: ' + JSON.stringify(response.data));
-
-            // Gửi dữ liệu lên Firestore
-            await addDoc(collection(db, 'consignments'), koiData);
-            alert('Dữ liệu đã được lưu vào Firestore.');
-
-            // Reset form
-            setKoiName('');
-            setKoiType('thuần chủng');
-            setKoiAge('');
-            setKoiSize('');
-            setKoiPurpose('bán');
-        } catch (error) {
-            console.error('Lỗi khi gửi dữ liệu:', error);
-            alert('Gửi thất bại, vui lòng thử lại.');
-        }
+        alert(`Gửi thành công: ${koiName}, Loại: ${koiType}, Tuổi: ${koiAge}, Kích thước: ${koiSize} cm, Mục đích: ${koiPurpose}`);
+        // Reset form
+        setKoiName('');
+        setKoiType('thuần chủng');
+        setKoiAge('');
+        setKoiSize('');
+        setKoiPurpose('bán');
     };
 
     return (

@@ -114,3 +114,15 @@
 td input{
     color: #000;
 }
+
+.compare-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3b0000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
